@@ -1,7 +1,7 @@
 import './App.css';
-import Home from "./Home";
-import Checkout from "./Checkout";
-import Login from "./Login";
+import Home from "./components/Home";
+import Checkout from "./components/Checkout";
+import Login from "./components/Login";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
 function App() {
