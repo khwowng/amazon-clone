@@ -1,0 +1,28 @@
+.basketItem {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.basketItem__info {
+  padding-left: 20px;
+}
+
+.basketItem__image {
+  object-fit: contain;
+  width: 180px;
+  height: 150px;
+}
+
+.basketItem__title {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+p.basketItem__title {
+    margin: 7px 0;
+}
+
+p.basketItem__price {
+    margin: 7px 0 15px;
+}
