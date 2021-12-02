@@ -1,20 +1,35 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { auth } from "./firebase.js";
 
 function Login() {
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = (e) => {
     e.preventDefault(); // prevent page from refreshing
     // firebase login
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        navigate("/");
+      })
+      .catch((error) => alert(error.message));
   };
   const register = (e) => {
     e.preventDefault(); // prevent page from refreshing
     // firebase register
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+        navigate("/");
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -35,7 +50,7 @@ function Login() {
               type="email"
               placeholder="Enter email"
               type="email"
-              value={password}
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
