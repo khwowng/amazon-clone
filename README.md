@@ -1,6 +1,6 @@
 # Amazon Clone using React JS and Firebase
 
-https://clone-a3edf.web.app[Live Site]
+## [Live Site](https://clone-a3edf.web.app)
 
 ## Introduction
 
